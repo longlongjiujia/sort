@@ -1,0 +1,15 @@
+        int a[] = {1, 5, 2, 4, 9, 0};
+
+        for (int i = 1; i < a.length; i++) {
+            for (int j = 0; j < a.length - i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int tmp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = tmp;
+                }
+            }
+        }
+
+        for (int i : a) {
+            System.out.println(i);
+        }
