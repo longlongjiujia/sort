@@ -1,0 +1,20 @@
+        int a[] = {1, 5, 2, 4, 9, 0};
+        for (int i = 0; i < a.length - 1; i++) {
+            int tmp = a[i];
+            int index = i;
+            for (int j = i + 1; j < a.length; j++) {
+                if (tmp < a[j]) {
+                    index = j;
+                    tmp = a[j];
+                }
+            }
+
+            if (index != i) {
+                a[index] = a[i];
+                a[i] = tmp;
+            }
+        }
+
+        for (int i : a) {
+            System.out.println(i);
+        }
