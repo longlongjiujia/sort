@@ -1,0 +1,24 @@
+  private static int[] merge(int[] a, int[] b) {
+        int[] c = new int[a.length + b.length];
+        int index = 0;
+        int i = 0;
+        int j = 0;
+
+        while (i < a.length && j < b.length) {
+            c[index++] = a[i] < b[j] ? a[i++] : b[j++];
+        }
+
+
+        if (i < a.length) {
+            for (; i < a.length; i++) {
+                c[index++] = a[i];
+            }
+            return c;
+        }
+
+        for (; j < a.length; j++) {
+            c[index++] = a[j];
+        }
+        return c;
+
+    }
