@@ -1,0 +1,27 @@
+ private static int search(int srcArray[], int low, int high) {
+
+        if (low == high) {
+            return low;
+        }
+
+        int mid = (high - low) / 2 + low;
+
+        int midInt = srcArray[mid];
+
+        if (midInt < srcArray[mid - 1] && midInt < srcArray[mid + 1]) {
+            return mid;
+        }
+
+        if (midInt > srcArray[mid - 1] && midInt > srcArray[mid + 1]) {
+            return mid + 1;
+        }
+
+        if (midInt > srcArray[mid - 1] && midInt < srcArray[mid + 1]) {
+            if (midInt > srcArray[high]) {
+                return search(srcArray, mid + 1, high);
+            }
+            return search(srcArray, low, mid - 1);
+        }
+
+        return -1;
+    }
