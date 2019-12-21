@@ -1,0 +1,22 @@
+ private static int binSearch(int srcArray[], int low, int high, int key) {
+
+        if (low >= high) {
+            return -1;
+        }
+
+        int mid = (high - low) / 2 + low;
+
+        if (key == srcArray[mid]) {
+            return mid;
+        }
+
+        if (key > srcArray[mid]) {
+            return binSearch(srcArray, mid + 1, high, key);
+        }
+
+        if (key < srcArray[mid]) {
+            return binSearch(srcArray, low, mid - 1, key);
+        }
+
+        return -1;
+    }
